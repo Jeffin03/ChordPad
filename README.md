@@ -12,22 +12,25 @@ ChordPad is a PWA built for music directors and keyboardists who need a quick, r
 
 ## Features
 
-- Full two-hand voicings per chord slot — right hand and left hand independently configurable
+- Full two-hand voicings per chord slot — right and left hand independently configurable
 - Music theory engine that suggests voicings automatically based on key and scale
 - Chord variations — inversions, 7ths, sus2, sus4, slash chords
 - Sustain and staccato via tap vs. hold
 - Velocity modes — Soft, Medium, Hard, Fixed
 - Global key selector with semitone transpose
 - Song presets — save and load full chord configurations per song
+- Preset export and import as JSON
 - Works on mobile, installable as a PWA
 
 ---
 
 ## Stack
 
-- **Framework** — React PWA
+- **Framework** — React + Vite
 - **Audio** — Tone.js
-- **Styling** — Tailwind CSS
+- **Styling** — Tailwind CSS + shadcn/ui
+- **State** — Zustand
+- **Storage** — localStorage
 
 ---
 
@@ -40,8 +43,16 @@ npm install
 npm run dev
 ​```
 
+Open on mobile for the best experience. For PWA install, open in Chrome and tap "Add to Home Screen."
+
 ---
 
-## Wiki
+## Documentation
 
-Full design decisions, architecture, and feature breakdown in the [project wiki](../../wiki).
+Full architecture, feature breakdown, and design decisions in the [project wiki](../../wiki).
+
+---
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for version history.
