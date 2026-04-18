@@ -8,7 +8,7 @@ function buildSampleMap() {
   for (const octave of SAMPLE_OCTAVES) {
     for (const note of SAMPLE_NOTES) {
       const key = `${note}${octave}`;
-      map[key] = `/samples/${key}.mp3`;
+      map[key] = `./samples/${key}.mp3`;
     }
   }
   return map;
