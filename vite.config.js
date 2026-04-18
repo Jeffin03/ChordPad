@@ -8,12 +8,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      injectRegister: false,
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png}'],
-        skipWaiting: true,
-        clientsClaim: true,
+        globPatterns: ['**/*.{js,css,html,ico,png.mp3}'],
+
       },
       manifest: {
         name: 'ChordPad',
