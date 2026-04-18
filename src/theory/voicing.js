@@ -11,8 +11,8 @@ import { noteToIndex, noteWithOctave } from './notes.js';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const RIGHT_BASE_OCTAVE = 4; // right hand starts around octave 4
-const LEFT_BASE_OCTAVE = 3; // left hand sits an octave below
+const RIGHT_BASE_OCTAVE = 3; // right hand starts around octave 4
+const LEFT_BASE_OCTAVE = 2; // left hand sits an octave below
 
 // ─── Right Hand ───────────────────────────────────────────────────────────────
 

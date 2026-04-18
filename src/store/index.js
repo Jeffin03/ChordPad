@@ -16,8 +16,9 @@ function buildSlots(root, type) {
   }));
 }
 
-function resolveSlot(slot) {
-  const chord = slot.variation
+
+function resolveSlot(slot, transpose) {
+  let chord = slot.variation
     ? applyVariation(slot.chord, slot.variation)
     : slot.chord;
 
@@ -27,13 +28,11 @@ function resolveSlot(slot) {
       root: transposeNote(chord.root, transpose),
       notes: chord.notes.map(n => transposeNote(n, transpose)),
       bassNote: chord.bassNote ? transposeNote(chord.bassNote, transpose) : undefined,
-
     };
   }
-  return voiceChord(chord);
-}
 
-// ─── Store ────────────────────────────────────────────────────────────────────
+  return voiceChord(chord);
+}// ─── Store ────────────────────────────────────────────────────────────────────
 
 export const useStore = create(
   persist(

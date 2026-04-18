@@ -1,10 +1,18 @@
-import { Button } from "@/components/ui/button"
+import { useState } from 'react';
+import Header from './components/layout/Header.jsx';
+import Pad from './components/pad/Pad.jsx';
+import Footer from './components/layout/Footer.jsx';
 
-function App() {
+export default function App() {
+  const [editMode, setEditMode] = useState(false);
+
   return (
-    <div className="bg-gray-900 min-h-screen flex items-center justify-center">
-      <Button>ChordPad</Button>
+    <div className="flex flex-col h-dvh bg-zinc-950 text-white overflow-hidden">
+      <Header editMode={editMode} onToggleEdit={() => setEditMode(e => !e)} />
+      <main className="flex-1 overflow-hidden">
+        <Pad editMode={editMode} />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-export default App
