@@ -10,8 +10,15 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png.mp3}'],
-
+        globPatterns: ['**/*.{js,css,html,ico,png}'], // no mp3
+        skipWaiting: true,
+        clientsClaim: true,
+        runtimeCaching: [
+          {
+            urlPattern: /\.mp3$/,
+            handler: 'NetworkOnly', // never cache mp3s
+          },
+        ],
       },
       manifest: {
         name: 'ChordPad',
