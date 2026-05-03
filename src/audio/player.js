@@ -5,10 +5,10 @@ import { getSampler, getSamplerInstance } from './sampler.js';
 // ─── Velocity Maps ────────────────────────────────────────────────────────────
 
 const VELOCITY = {
-  soft: 0.3,
-  medium: 0.6,
-  hard: 0.9,
-  fixed: 0.7,
+  soft: 0.7,
+  medium: 0.9,
+  hard: 1.0,
+  fixed: 1.0,
 };
 
 // ─── Note Conversion ──────────────────────────────────────────────────────────
@@ -65,5 +65,6 @@ export function stopChord(voicing) {
 // Called once on app load — ensures AudioContext is resumed and sampler is ready
 export async function initAudio() {
   await Tone.start();
+  Tone.getDestination().volume.value = 12; //boost in decibels, 6db = double perceived volume
   await getSampler();
 }
