@@ -179,6 +179,15 @@ export const useStore = create(
     }),
     {
       name: 'chordpad-store',
+      version: 1,
+      migrate: (persistedState) => {
+        return persistedState;
+      },
+      onRehydrateStorage: () => (_, error) => {
+        if (error) {
+          console.error('[ChordPad] Failed to rehydrate store:', error);
+        }
+      },
       partialize: (state) => ({
         root: state.root,
         scaleType: state.scaleType,
@@ -188,6 +197,5 @@ export const useStore = create(
         activePreset: state.activePreset,
         presets: state.presets,
       }),
-    }
-  )
+    })
 );

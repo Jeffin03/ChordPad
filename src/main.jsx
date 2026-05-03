@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { initAudio } from './audio/player.js';
 import './index.css'
 import App from './App.jsx'
+import ErrorBoundary from './ErrorBoundary.jsx';
 
 
 // Unlock AudioContext on first user gesture anywhere in the app 
@@ -16,6 +17,8 @@ if ('serviceWorker' in navigator) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <ErrorBoundary>
+      < App />
+    </ErrorBoundary>
   </StrictMode>,
 )
